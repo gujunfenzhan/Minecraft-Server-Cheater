@@ -1,6 +1,7 @@
 package ink.mhxk.msc;
 
 import ink.mhxk.msc.common.CommonProxy;
+import ink.mhxk.msc.init.ModConfigLoader;
 import ink.mhxk.msc.init.ModKeyLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,6 +27,7 @@ public class ModMSCMain {
     public void pre(FMLPreInitializationEvent event){
         INSTANCE = this;
         MinecraftForge.EVENT_BUS.register(proxy);
+        new ModConfigLoader(event);
     }
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
