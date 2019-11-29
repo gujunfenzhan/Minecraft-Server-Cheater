@@ -17,8 +17,10 @@ public class ModHawkingCheater {
     @SideOnly(Side.CLIENT)
     public void update(String str){
         nu++;
-        if(nu>=interval)nu=0;
-        FMLClientHandler.instance().getClientPlayerEntity().sendChatMessage(str);
+        if(nu>=interval) {
+            nu = 0;
+            FMLClientHandler.instance().getClientPlayerEntity().sendChatMessage(str);
+        }
     }
 
 }

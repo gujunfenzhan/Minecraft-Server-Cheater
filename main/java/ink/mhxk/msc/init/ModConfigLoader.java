@@ -13,6 +13,7 @@ public class ModConfigLoader {
     public static double FLASH_DISTANCE;
     public static double HAND_DISTANCE;
     public static int HAWKING_INTERVAL;
+    public static int SPRAYER_INTERVAL;
     public ModConfigLoader(FMLPreInitializationEvent event){
         configuration = new Configuration(event.getSuggestedConfigurationFile());
         configuration.load();
@@ -24,6 +25,7 @@ public class ModConfigLoader {
         FLASH_DISTANCE = configuration.get(Configuration.CATEGORY_GENERAL,"flashDistance",4.0D,I18n.format("config.msc.flashDistance")).getDouble();
         HAND_DISTANCE = configuration.get(Configuration.CATEGORY_GENERAL,"handDistance",30.0D,I18n.format("config.msc.handDistance")).getDouble();
         HAWKING_INTERVAL = configuration.get(Configuration.CATEGORY_GENERAL,"hawkingInterval",40,I18n.format("config.msc.hawkingInterval")).getInt();
+        SPRAYER_INTERVAL = configuration.get(Configuration.CATEGORY_GENERAL,"sprayerInterval",40,I18n.format("config.msc.sprayerInterval")).getInt();
         configuration.save();
     }
 }

@@ -3,6 +3,7 @@ package ink.mhxk.msc;
 import ink.mhxk.msc.common.CommonProxy;
 import ink.mhxk.msc.init.ModConfigLoader;
 import ink.mhxk.msc.init.ModKeyLoader;
+import ink.mhxk.msc.init.ModSentenceLoader;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +29,7 @@ public class ModMSCMain {
         INSTANCE = this;
         MinecraftForge.EVENT_BUS.register(proxy);
         new ModConfigLoader(event);
+        new ModSentenceLoader();
     }
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){

@@ -3,6 +3,7 @@ config.msc.superRunSpeed=速跑速度
 config.msc.flashDistance=闪现距离
 config.msc.handDistance=手的长度
 config.msc.hawkingInterval=叫卖间隔
+config.msc.sprayerInterval=喷人间隔
 
 key.categories.msc=挂逼套装
 
@@ -11,6 +12,9 @@ key.msc.superRun=速跑模式
 key.msc.flash=闪现模式
 key.msc.longHand=长手模式
 key.msc.hawking=叫卖模式
+key.msc.sprayer=喷人模式
+key.msc.rebound=虚空反弹模式
+key.msc.oreTracking=矿物追踪模式
 
 key.fly.true=飞行模式开启
 key.fly.false=飞行模式关闭
@@ -21,3 +25,9 @@ key.longHand.false=长手模式关闭
 key.hawking.true=叫卖模式开启
 key.hawking.false=叫卖模式关闭
 key.hawking.null=你没有设置叫卖内容
+key.hawking.success=叫卖内容设置成功
+key.sprayer.true=喷人模式开启
+key.sprayer.false=喷人模式关闭
+key.rebound.true=虚空反弹模式开启
+key.rebound.false=虚空反弹模式关闭
+key.oreTracking.false=矿物追踪模式关闭
