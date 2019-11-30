@@ -1,6 +1,8 @@
 package ink.mhxk.msc.init;
 
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraftforge.client.settings.KeyConflictContext;
+import net.minecraftforge.client.settings.KeyModifier;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import org.lwjgl.input.Keyboard;
 
@@ -24,7 +26,8 @@ public class ModKeyLoader {
         HAWKING = new KeyBinding("key.msc.hawking",Keyboard.KEY_U,"key.categories.msc");
         SPRAYER = new KeyBinding("key.msc.sprayer",Keyboard.KEY_P,"key.categories.msc");
         REBOUND = new KeyBinding("key.msc.rebound",Keyboard.KEY_M,"key.categories.msc");
-        ORE_TRACKING = new KeyBinding("key.msc.oreTracking",Keyboard.KEY_N,"key.categories.msc");
+        //ORE_TRACKING = new KeyBinding("key.msc.oreTracking",Keyboard.KEY_N,"key.categories.msc");
+        ORE_TRACKING = new KeyBinding("key.msc.oreTracking", KeyConflictContext.IN_GAME, KeyModifier.CONTROL,Keyboard.KEY_N,"key.categories.msc");
         ClientRegistry.registerKeyBinding(FLY);
         ClientRegistry.registerKeyBinding(SUPER_RUN);
         ClientRegistry.registerKeyBinding(FLASH);

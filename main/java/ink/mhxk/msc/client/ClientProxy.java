@@ -29,6 +29,10 @@ extends CommonProxy {
             str = str.substring(1,str.length());
             ModCheaterHandle.getInstance().onChat(str);
             event.setCanceled(true);
+        }else if(str.substring(0,1).toCharArray()[0]=='/'&&str.length()>1){
+           // str = str.substring(1,str.length());
+          //  ModCheaterHandle.getInstance().onCommond(str);
+           // event.setCanceled(true);
         }
     }
 }

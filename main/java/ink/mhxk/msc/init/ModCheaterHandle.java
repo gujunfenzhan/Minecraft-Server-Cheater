@@ -2,15 +2,20 @@ package ink.mhxk.msc.init;
 
 import ink.mhxk.msc.msc.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
+import org.lwjgl.input.Keyboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Creative by GoldMain on 2019/11/24
@@ -18,6 +23,7 @@ import java.util.List;
 
 public class ModCheaterHandle {
     private static ModCheaterHandle INSTANCE;
+    public Random random = new Random();
     public String chat;
     public ModFlyCheater flyCheater = new ModFlyCheater(ModConfigLoader.FLY_SPEED);
     public ModSuperRunCheater superRunCheater = new ModSuperRunCheater(ModConfigLoader.SUPER_RUN_SPEED);
@@ -48,6 +54,7 @@ public class ModCheaterHandle {
         blocks.add(Blocks.IRON_ORE);
         blocks.add(Blocks.GOLD_ORE);
         blocks.add(Blocks.DIAMOND_ORE);
+        blocks.add(Blocks.EMERALD_ORE);
     }
     public void update(EntityPlayer entityPlayer){
         if(ModKeyLoader.FLY.isPressed()){
@@ -106,6 +113,24 @@ public class ModCheaterHandle {
         this.chat = chat;
         String str = "key.hawking.success";
         entityPlayerSP.sendMessage(new TextComponentString(I18n.format(str)));
+    }
+    public void onCommond(String str){
+        World world = entityPlayerSP.world;
+        if(world==null)return;
+        String[] c = str.split(" ");
+        if(c[0].equals("tp")){
+            if(c.length==1){
+                int x = random.nextInt(2000)-999;
+                int z = random.nextInt(2000)-999;
+                int y = 0;
+                while(world.getBlockState(new BlockPos(x,y,z)).getMaterial()!= Material.AIR){
+                    y++;
+                }
+                entityPlayerSP.moveToBlockPosAndAngles(new BlockPos(x,y,z),entityPlayerSP.rotationYaw,entityPlayerSP.rotationPitch);
+            }else if(c.length==4){
+
+            }
+        }
     }
     public static ModCheaterHandle getInstance(){
         if(INSTANCE == null)INSTANCE = new ModCheaterHandle();
